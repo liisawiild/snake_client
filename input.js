@@ -14,30 +14,18 @@ const setupInput = (conn) => {
 };
 
 const handleUserInput = function (data) {
-  if (data === '\u0003') {
-    process.exit();
-  }
-//this writes to the server, but it does not mean that it prints (the server has it's own reaction in snek-multiplayer)
-  if (data === 'w') {
-    connection.write("Move: up");                  
-  }
-
-  if (data === 'a') {
-    connection.write("Move: left");
-  }
-
-  if (data === 's') {
-    connection.write("Move: down");
-    }
+  const movement = {
+    '\u0003': () => process.exit(),
+    //connection.write writes to the server, but it does not mean that it prints (the server has it's own reaction in snek-multiplayer "Move:__" or "Say:___")
+    'w': () => connection.write("Move: up"),
+    'a': () => connection.write("Move: left"),
+    's': () => connection.write("Move: down"),
+    'd': () => connection.write("Move: right"),
+    'p': () => connection.write("Say: I'm winning!!"),
+  }  
   
-  if (data === 'd') {
-    connection.write("Move: right");
-  }
+  movement[data]();
 
-  if (data === 'p') {
-    connection.write("Say: I'm winning!!")
-  }
-  
 };
 
 module.exports = setupInput;
