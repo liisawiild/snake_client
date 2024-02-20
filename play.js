@@ -3,7 +3,6 @@ const connect = require("./client");
 const setupInput = require("./input");
 
 console.log("Connecting ...");
-connect();
 
-setupInput();
+setupInput(connect());     //the connection object is sent to setupInput so it can interact with the server
 
