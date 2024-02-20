@@ -33,6 +33,10 @@ const handleUserInput = function (data) {
   if (data === 'd') {
     connection.write("Move: right");
   }
+
+  if (data === 'p') {
+    connection.write("Say: I'm winning!!")
+  }
   
 };
 
