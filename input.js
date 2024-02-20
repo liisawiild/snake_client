@@ -13,7 +13,7 @@ const setupInput = (conn) => {
   return stdin;
 };
 
-const handleUserInput = function (data) {
+const handleUserInput = function(data) {
   const movement = {
     '\u0003': () => process.exit(),
     //connection.write writes to the server, but it does not mean that it prints (the server has it's own reaction in snek-multiplayer "Move:__" or "Say:___")
@@ -22,7 +22,7 @@ const handleUserInput = function (data) {
     's': () => connection.write("Move: down"),
     'd': () => connection.write("Move: right"),
     'p': () => connection.write("Say: I'm winning!!"),
-  }  
+  };
   
   movement[data]();
 
