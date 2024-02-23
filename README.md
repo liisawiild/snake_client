@@ -8,8 +8,8 @@ Before you can run this client, you will need to be running the server side. Our
 
 ## Final Product
 
-![server view upon successful connection; initials appear with greeting from server "hey"](/snake\images\snake1.png)
-![server view of best snake player in the game, sending a message to the server that they are winning](/snake\images\snake2.png)
+![server view upon successful connection; initials appear with greeting from server "hey"](images/snake1.png)
+![server view of best snake player in the game, sending a message to the server that they are winning](images/snake2.png)
 
 
 ## Getting Started
