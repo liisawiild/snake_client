@@ -13,6 +13,7 @@ const connect = function() {
   conn.on("data", (data) => {
     console.log(data);
   });
+  
   // send successful connection message upon connection
   conn.on("connect", () => {
     console.log(successfulConnect);
