@@ -1,6 +1,7 @@
-const net = require("net");
-const {IP, PORT, successfulConnect} = require("./constants");
+const { net } = require("net");
+const { IP, PORT, successfulConnect } = require("./constants");
 
+//create a connection to the server
 const connect = function() {
   const conn = net.createConnection({
     host: IP,
@@ -12,6 +13,7 @@ const connect = function() {
   conn.on("data", (data) => {
     console.log(data);
   });
+  // send successful connection message upon connection
   conn.on("connect", () => {
     console.log(successfulConnect);
     conn.write("Name: LKW");
@@ -22,4 +24,4 @@ const connect = function() {
 };
 
 
-module.exports = connect;
+module.exports = { connect };
