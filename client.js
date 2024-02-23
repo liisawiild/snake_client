@@ -1,4 +1,4 @@
-const { net } = require("net");
+const net = require("net");
 const { IP, PORT, successfulConnect } = require("./constants");
 
 //create a connection to the server
